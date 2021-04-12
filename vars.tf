@@ -8,7 +8,7 @@ variable "ssh-source-address" {
 }
 variable "prefix" {
     type = string
-    default = demo
+    default = "demo"
 }
 variable "private-cidr" {
     type = string

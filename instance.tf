@@ -51,7 +51,3 @@ resource "azurerm_public_ip" "demo-instance" {
  resource_group_name = azurerm_resource_group.demo.name 
  allocation_method = "Dynamic" 
 }
-resource "azure_rm_network_security_group_association" "demo-sg" {
-  subnet_id = azurerm_subnet.demo-internal-1.id
-  network_security_group_id =  azurerm_network_security_group.allow-ssh.id
-}

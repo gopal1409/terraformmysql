@@ -1,12 +1,12 @@
 resource "azurerm_mysql_server" "demo" {
-  name                = "mysql-training-gopaldas1"
+  name                = "mysql-training-testgopal"
   location            = azurerm_resource_group.demo.location
   resource_group_name = azurerm_resource_group.demo.name
 
   administrator_login          = "mysqladm"
   administrator_login_password = "Admin@123456"
 
-  sku_name   = "B_Gen5_2"
+  sku_name   = "GP_Gen5_2"
   storage_mb = 5120
   version    = "5.7"
 

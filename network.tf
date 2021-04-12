@@ -23,6 +23,7 @@ resource "azurerm_network_security_group" "allow-ssh" {
     name = "${var.prefix}-allow-ssh"
     location = var.location
     resource_group_name = azurerm_resource_group.demo.name
+    
     security_rule {
         
       name                   = "ssh"

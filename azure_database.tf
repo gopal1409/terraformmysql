@@ -34,13 +34,14 @@ resource "azurerm_mysql_virtual_network_rule" "demo-database-subnet-vnet-rule" {
 }
 resource "azurerm_mysql_virtual_network_rule" "demo-subnet-vnet-rule" {
   name                = "mysql-demo-subnetvnet-rule"
-  resource_group_name = azurerm_resource_group.example.name
-  server_name         = azurerm_mysql_server.example.name
-  subnet_id           = azurerm_subnet.internal-1.id
+  resource_group_name = azurerm_resource_group.demo.name
+  server_name         = azurerm_mysql_server.demo.name
+  subnet_id           = azurerm_subnet.demo-internal-1.id
 }
-resource "azurerm_mysql_virtual_network_rule" "demo-allow-demo-instance" {
+resource "azurerm_mysql_firewall_rule" "demo-allow-demo-instance" {
   name                = "mysql-demo-instance"
   resource_group_name = azurerm_resource_group.demo.name
   server_name         = azurerm_mysql_server.demo.name
-  start_ip_address           = azurerm_
+  start_ip_address           = azurerm_network_interface.demo-instance.private_ip_address
+  end_ip_address = azurerm_network_interface.demo-instance.private_ip_address
 }

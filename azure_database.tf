@@ -1,5 +1,5 @@
 resource "azurerm_mysql_server" "demo" {
-  name                = "mysql-training"
+  name                = "mysql-training-gopaldas"
   location            = azurerm_resource_group.demo.location
   resource_group_name = azurerm_resource_group.demo.name
 

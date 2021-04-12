@@ -18,7 +18,7 @@
     }
     
   storage_os_disk {
-    name              = ""
+    name              = "gopal-disk"
     caching           = "ReadWrite"
     create_option     = "FromImage"
     managed_disk_type = "Standard_LRS"
